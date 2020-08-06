@@ -1,6 +1,7 @@
 import entities.Jogadores;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class List {
 
@@ -25,6 +26,7 @@ public class List {
         //Removendo um item da Lista
         escalacaoDoTIme.remove(10);
 
+
         //Mostrando que posição um jogador está na Lista
         Jogadores jogadorProcurado = new Jogadores("Cantillo",24);
         System.out.println("O jogador Cantillo está na posição: " + escalacaoDoTIme.indexOf(jogadorProcurado));
@@ -42,6 +44,24 @@ public class List {
 
         if(escalacaoDoTIme.get(6) == new Jogadores("Gabriel", 5)){
             System.out.println("Não irá cair aqui");
+        }
+
+        //PERGUNTADO NO MEETUP SOBRE O SHUFFLE, O SHUFFLE ESSE METODO FUNCIONA PERMUTANDO ALEATORIAMENTE OS ELEMENTOS NA LISTA
+        //TEM O TEMPO DE EXECUÇÃO LINEAR, POR BAIXO DOS PANOS ELA ESTA PEGANDO A LISTA, PASSANDO PARA UMA MATRIZ, DEPOIS ELA EMBARALHA A COPIA DA MATRIZ, E COPIA
+        //ESSA MATRIZ EMBARALHADA PARA A LISTA.
+        //PARA ESTE TESTE, PRIMEIRAMENTE VAMOS IMPRIMIR A NOSSA LISTA ATUAL
+
+        for (Jogadores jogadores : escalacaoDoTIme){
+            System.out.println("Jogador:  " + jogadores.getName() + " Numero " + jogadores.getNumber());
+        }
+
+        //AGORA VAMOS IMPRIMIR UMA LISTA UTILIZANDO O METODO SHUFFLE, QUE IRÁ REORGANIZAR OS ITENS QUE ESTÃO NA MINHA LISTA.
+        System.out.println("****************************");
+        //Então o metodo shuffle do collections deverá pegar nossa lista e reordenar ela aleatoriamente, fazendo com que o resultado da impressao
+        //seja totalmente diferente do de cima.
+        Collections.shuffle(escalacaoDoTIme);
+        for (Jogadores jogadores : escalacaoDoTIme){
+            System.out.println("Jogador:  " + jogadores.getName() + " Numero " + jogadores.getNumber());
         }
 
 

@@ -30,7 +30,9 @@ public class HashMapExample {
         }
 
         // Remover Item da LIsta
-        escalacaoDoTime.remove(cassio);
+        escalacaoDoTime.remove(12);
+        System.out.println("Agora nossa lista terá de ter 10 elementos  e tem: " + escalacaoDoTime.size());
+        escalacaoDoTime.put(12, cassio);
 
         //DESCARREGANDO UM MAP EM UM SET (UTILIZANDO O CAST)
         Set<Jogadores> setDaEscalacao = new HashSet<>(escalacaoDoTime.values());
@@ -50,6 +52,9 @@ public class HashMapExample {
             System.out.println("*************************************");
 
         }
+
+        //BUSCANDO ITEM DO MAP
+        System.out.println("Esse é o objeto chave 12 " + escalacaoDoTime.get(12).getName() + " com o numero: " + escalacaoDoTime.get(12).getNumber());
 
     }
 
